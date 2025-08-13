@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo/logo.png";
 
 const NavItems = () => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -21,8 +20,7 @@ const NavItems = () => {
     <header
       className={`header-section style-4 ${
         headerFixed ? "header-fixed fadeInUp" : ""
-      }`}
-    >
+      }`}>
       {/* header top start here */}
       <div className={`header-top d-md-none ${socialToggle ? "open" : ""}`}>
         <div className="container">
@@ -43,7 +41,7 @@ const NavItems = () => {
             <div className="logo-search-acte">
               <div className="logo">
                 <Link to={"/"}>
-                  <img src={logo} alt="" />
+                  <img src="../images/logo/logo.png" alt="" />
                 </Link>
               </div>
             </div>
@@ -78,15 +76,21 @@ const NavItems = () => {
               </Link>
 
               {/* menu Toggler */}
-                <div onClick={() => setMenuToggle(!menuToggle)} className={`header-bar d-lg-none ${menuToggle ? "active" : ""}`}>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
+              <div
+                onClick={() => setMenuToggle(!menuToggle)}
+                className={`header-bar d-lg-none ${
+                  menuToggle ? "active" : ""
+                }`}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
 
               {/* social Toggler */}
-              <div className="ellepsis-bar d-md-none" onClick={() => setSocialToggle(!socialToggle)}>
-              <i className="icofont-info-square"></i>
+              <div
+                className="ellepsis-bar d-md-none"
+                onClick={() => setSocialToggle(!socialToggle)}>
+                <i className="icofont-info-square"></i>
               </div>
             </div>
           </div>
